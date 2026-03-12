@@ -5,7 +5,6 @@
 <title>Cheddy Records</title>
 
 <style>
-
 body{
   margin:0;
   overflow:hidden;
@@ -20,7 +19,6 @@ canvas{
   top:0;
   left:0;
 }
-
 </style>
 
 </head>
@@ -56,6 +54,7 @@ function animate(){
 
   ctx.clearRect(0,0,canvas.width,canvas.height);
 
+  /* bouncing logo only */
   ctx.drawImage(logo,x,y,SIZE,SIZE);
 
   x += dx;
