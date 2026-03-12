@@ -13,8 +13,6 @@ html, body{
   height:100%;
   overflow:hidden;
 
-  /* BACKGROUND FITS ENTIRE PAGE */
-
   background-image:url("background.jpg");
   background-size:cover;
   background-position:center;
@@ -28,8 +26,8 @@ canvas{
 }
 
 </style>
-
 </head>
+
 <body>
 
 <canvas id="screen"></canvas>
@@ -50,17 +48,17 @@ window.addEventListener("resize", resize);
 const logo = new Image();
 logo.src = "cheddy.png";
 
-/* BIGGER LOGO */
+/* LOGO SIZE */
 
 const SIZE = 220;
 
 let x = 120;
 let y = 100;
 
-/* SMOOTH SPEED */
+/* SLIGHTLY FASTER SPEED */
 
-let dx = 3.8;
-let dy = 3.4;
+let dx = 4.2;
+let dy = 3.8;
 
 function animate(){
 
