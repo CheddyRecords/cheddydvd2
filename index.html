@@ -5,15 +5,22 @@
 <title>Cheddy Records</title>
 
 <style>
+
 body{
   margin:0;
-  background:black;
   overflow:hidden;
+  background-image:url("background.jpg");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
 }
 
 canvas{
-  display:block;
+  position:absolute;
+  top:0;
+  left:0;
 }
+
 </style>
 
 </head>
@@ -35,15 +42,15 @@ resize();
 window.addEventListener("resize", resize);
 
 const logo = new Image();
-logo.src = "cheddy.png";   // your uploaded png
+logo.src = "cheddy.png";
 
-const SIZE = 200;
+const SIZE = 220;
 
-let x = 120;
-let y = 100;
+let x = 150;
+let y = 120;
 
 let dx = 3;
-let dy = 2.6;
+let dy = 2.7;
 
 function animate(){
 
