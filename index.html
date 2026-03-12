@@ -8,51 +8,35 @@
 
 body{
   margin:0;
-  height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:black;
-}
-
-/* PERFECT SQUARE BACKGROUND */
-
-.square{
-  width:min(90vw,90vh);
-  height:min(90vw,90vh);
+  overflow:hidden;
 
   background-image:url("background.jpg");
   background-size:cover;
   background-position:center;
-
-  position:relative;
-  overflow:hidden;
+  background-repeat:no-repeat;
 }
 
 canvas{
-  width:100%;
-  height:100%;
-  display:block;
+  position:absolute;
+  top:0;
+  left:0;
 }
 
 </style>
-</head>
 
+</head>
 <body>
 
-<div class="square">
 <canvas id="screen"></canvas>
-</div>
 
 <script>
 
 const canvas = document.getElementById("screen");
 const ctx = canvas.getContext("2d");
-const square = document.querySelector(".square");
 
 function resize(){
-  canvas.width = square.clientWidth;
-  canvas.height = square.clientHeight;
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 }
 
 resize();
