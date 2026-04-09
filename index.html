@@ -5,12 +5,22 @@
 <title>Cheddy Records</title>
 
 <style>
-
 html, body{
   margin:0;
   padding:0;
   width:100%;
   height:100%;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#000;
+}
+
+#square-wrap{
+  position:relative;
+  width:min(100vw, 100vh);
+  height:min(100vw, 100vh);
   overflow:hidden;
 
   background-image:url("background.jpg");
@@ -23,22 +33,25 @@ canvas{
   position:absolute;
   top:0;
   left:0;
+  width:100%;
+  height:100%;
 }
-
 </style>
 </head>
 
 <body>
 
-<canvas id="screen"></canvas>
+<div id="square-wrap">
+  <canvas id="screen"></canvas>
+</div>
 
 <script>
-
 const canvas = document.getElementById("screen");
 const ctx = canvas.getContext("2d");
+const wrap = document.getElementById("square-wrap");
 
 function resize(){
-  const size = Math.min(window.innerWidth, window.innerHeight);
+  const size = wrap.clientWidth; // match square exactly
   canvas.width = size;
   canvas.height = size;
 }
@@ -50,14 +63,12 @@ const logo = new Image();
 logo.src = "cheddy.png";
 
 /* LOGO SIZE */
-
 const SIZE = 220;
 
 let x = 120;
 let y = 100;
 
-/* SLIGHTLY FASTER SPEED */
-
+/* SPEED */
 let dx = 4.2;
 let dy = 3.8;
 
@@ -70,6 +81,7 @@ function animate(){
   x += dx;
   y += dy;
 
+  // BOUNDARY = square ONLY
   if(x <= 0 || x + SIZE >= canvas.width){
     dx = -dx;
   }
