@@ -38,8 +38,9 @@ const canvas = document.getElementById("screen");
 const ctx = canvas.getContext("2d");
 
 function resize(){
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  const size = Math.min(window.innerWidth, window.innerHeight);
+  canvas.width = size;
+  canvas.height = size;
 }
 
 resize();
